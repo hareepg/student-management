@@ -14,7 +14,10 @@ export class ListComponent implements OnInit {
       .subscribe(res => {
         this.list = res as Student[];
         console.table(this.list);
-      }, err => {})
+      }, 
+      
+      
+      err => {})
   }
 
   ngOnInit() {

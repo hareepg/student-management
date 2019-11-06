@@ -9,6 +9,9 @@ import { Student } from '../models/Student';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
+    static findById(_id: any) {
+        throw new Error("Method not implemented.");
+    }
   student: Student = {};
   errorMessage: string;
   constructor(private http: HttpClient, private router: Router) { }
