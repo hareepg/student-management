@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Student } from '../models/Student';
 
 @Component({
   selector: 'app-list',
@@ -6,8 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list.component.scss']
 })
 export class ListComponent implements OnInit {
-
-  constructor() { }
+  list: Student[];
+  constructor(private http: HttpClient) {
+    http.get('/api')
+      .subscribe(res => {
+        this.list = res as Student[];
+        console.table(this.list);
+      }, err => {})
+  }
 
   ngOnInit() {
   }

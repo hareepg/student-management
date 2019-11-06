@@ -49,62 +49,18 @@
     <thead>
         <tr>
             <th>#</th>
-            <th>Customer</th>
-            <th>Location</th>
-            <th>Order Date</th>
-            <th>Status</th>
-            <th>Net Amount</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>User ID</th>
             <th>Action</th>
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>1</td>
-            <td><a href="#"> Michael Holz</a></td>
-            <td>London</td>
-            <td>Jun 15, 2017</td>
-            <td><span class="status text-success">&bull;</span> Delivered</td>
-            <td>$254</td>
-            <td><a href="#" class="view" title="View Details" data-toggle="tooltip"><i
-                        class="material-icons">&#xE5C8;</i></a></td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td><a href="#"> Paula Wilson</a></td>
-            <td>Madrid</td>
-            <td>Jun 21, 2017</td>
-            <td><span class="status text-info">&bull;</span> Shipped</td>
-            <td>$1,260</td>
-            <td><a href="#" class="view" title="View Details" data-toggle="tooltip"><i
-                        class="material-icons">&#xE5C8;</i></a></td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td><a href="#"> Antonio Moreno</a></td>
-            <td>Berlin</td>
-            <td>Jul 04, 2017</td>
-            <td><span class="status text-danger">&bull;</span> Cancelled</td>
-            <td>$350</td>
-            <td><a href="#" class="view" title="View Details" data-toggle="tooltip"><i
-                        class="material-icons">&#xE5C8;</i></a></td>
-        </tr>
-        <tr>
-            <td>4</td>
-            <td><a href="#"> Mary Saveley</a></td>
-            <td>New York</td>
-            <td>Jul 16, 2017</td>
-            <td><span class="status text-warning">&bull;</span> Pending</td>
-            <td>$1,572</td>
-            <td><a href="#" class="view" title="View Details" data-toggle="tooltip"><i
-                        class="material-icons">&#xE5C8;</i></a></td>
-        </tr>
-        <tr>
-            <td>5</td>
-            <td><a href="#"> Martin Sommer</a></td>
-            <td>Paris</td>
-            <td>Aug 04, 2017</td>
-            <td><span class="status text-success">&bull;</span> Delivered</td>
-            <td>$580</td>
+        <tr *ngFor="let student of list" *ngIf="list && list.length; index as key">
+            <td>{{key + 1}}</td>
+            <td> {{student.firstName}} {{student.lastName}}</td>
+            <td>{{student.email}}</td>
+            <td>{{student.userId}}</td>
             <td><a href="#" class="view" title="View Details" data-toggle="tooltip"><i
                         class="material-icons">&#xE5C8;</i></a></td>
         </tr>
