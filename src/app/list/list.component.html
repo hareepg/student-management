@@ -56,8 +56,8 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let student of list" *ngIf="list && list.length; index as key">
-            <td>{{key + 1}}</td>
+        <tr *ngFor="let student of list" >
+            <td></td>
             <td> {{student.firstName}} {{student.lastName}}</td>
             <td>{{student.email}}</td>
             <td>{{student.userId}}</td>
